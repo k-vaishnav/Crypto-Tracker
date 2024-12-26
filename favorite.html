@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="left-nav">
+        <a href="index.html" class="title">CRYPTO TRACKER</a>
+      </div>
+      <div class="right-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="favorite.html" class="nav-link">Liked Coins</a>
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." />
+          <i class="fas fa-search" id="search-icon"></i>
+          <div class="dialog-box" id="search-dialog">
+            <div class="dialog-content">
+              <span id="close-dialog" class="close-btn">&times;</span>
+              <h2>Search Results</h2>
+              <ul id="search-results">
+                <!-- Search results will be populated here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <h1 style="text-align: center">Favorite coins</h1>
+    <div class="shimmer-container" style="display: none">
+      <div class="shimmer"></div>
+    </div>
+    <table id="favorite-table">
+      <thead>
+        <tr>
+          <th>position</th>
+          <th>Icon</th>
+          <th>Name</th>
+          <th>
+            Price
+            <i id="sort-price-asc" class="fas fa-arrow-up"></i>
+            <i id="sort-price-desc" class="fas fa-arrow-down"></i>
+          </th>
+          <th>
+            24h Volume
+            <i id="sort-volume-asc" class="fas fa-arrow-up"></i>
+            <i id="sort-volume-desc" class="fas fa-arrow-down"></i>
+          </th>
+          <th>
+            Market Cap
+            <i
+              id="sort-market-asc"
+              class="fas fa-arrow-up"
+              title="Sort by market ascending"
+            ></i>
+            <i
+              id="sort-market-desc"
+              class="fas fa-arrow-down"
+              title="Sort by market descending"
+            ></i>
+          </th>
+          <!-- <th>Favorite</th> -->
+        </tr>
+      </thead>
+      <tbody id="coin-table">
+        <!--Favorite coins will be inserted here dynamically -->
+      </tbody>
+    </table>
+    <p class="no-favorite" style="display: none; text-align: center;">
+      "You haven't liked any coins yet.Explore and add your Favorite coins.
+    </p>
+  </body>
+  <script src="favortie.js"></script>
+</html>

@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #333;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+  position: relative;
+}
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+.title {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(255, 255, 0, 0.895);
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  margin-left: auto;
+}
+.title:hover {
+  color: darkorange;
+}
+.right-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-link {
+  text-decoration: none;
+  background-color: rgba(255, 255, 0, 0.895);
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  color: black;
+  line-height: 1em;
+  margin-right: 1em;
+}
+.nav-link:hover {
+  background-color: darkorange;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 5px 8px;
+  gap: 10px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#search-input { 
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: px;
+    font-size: 1em;
+}
+#search-dialog {
+  position: absolute;
+  top:2em;
+  left:10;
+ width:100%;
+  background-color: white;
+  box-shadow:0 0 15px rgba(0, 0, 0, 0.5);
+  z-index:1000;
+  border-radius:10px;
+  display:none;
+}
+#dialog-content {
+  position:relative;
+}
+#dialog-content h2 {
+  margin-left:4px;
+}
+.close-btn{
+  position: absolute;
+  right:20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#search-results {
+  list-style: none;
+  padding: 0;
+  margin:10px 0 0;
+}
+#search-results li {
+  display: flex;
+  align-items: center;
+  margin:10px 0;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+#search-result li:hover{
+  background-color: #dddbdb;
+}
+#search-results img {
+  width:32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-top: 10px;
+  border-radius: 10px; */
+}
+
+th,td {
+  border: 1px solid #ddd;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+}
+table td {
+  text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+
+tr:hover{
+    background-color:#f1f1f1;
+    cursor: pointer;
+}
+td 
+{
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+#pagination-controls button {
+    background-color: #f16222;
+    color: white;
+    border:none;
+    padding:10px 20px;
+    border-radius: 5px;
+    margin:0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease opacity 0.3s;
+
+}
+
+#pagination-controls button:disabled{
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#pagination-controls button:hover:not(:disabled){
+    background-color: yellow;
+    color: black;
+}
+
+#pagination-controls button:focus{
+    outline: none;
+}
+
+.favorite-icon {
+  cursor: pointer;
+}
+
+.favorite-icon:hover ,
+.favorite-icon.favorite {
+  color: gold;
+}
+
+.shimmer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  display: none;
+}
+.shimmer {
+  width: 70%;
+  height: 80px;
+  background: linear-gradient(-45deg,#bababa 25%, #eae6e6 50%, #e0e0e0 75%);
+  background-size: 100% 100%;
+  animation: shimmerAnimation 1.8s infinite linear;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+@keyframes shimmerAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
